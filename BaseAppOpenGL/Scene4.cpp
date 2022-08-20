@@ -98,22 +98,230 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//                               DESENHA OS OBJETOS DA CENA (INÍCIO)
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	glColor4f(0.0f, 0.0f, 0.25f, 0.1f);
+
+	//Chão água
+	//glPushMatrix(); //Salva a matrix atual
+	//auxSolidBox(41.0, 0.4, 41.0);
+	//glPopMatrix();
+
+	//Chão grama
+	glColor3ub(17, 133, 12);
+	glPushMatrix(); //Salva a matrix atual
+	auxSolidBox(40.0, 0.5, 40.0);
+	glPopMatrix();
+
+	//Chão da casa
+	glColor3ub(179, 185, 157);
+	glPushMatrix();
+	glTranslatef(-4.5, 0.75, -3.5);
+	auxSolidBox(25.0, 1.0, 20.0);
+	glPopMatrix();
+
+	//Grade
+	glColor3ub(240, 255, 0);
+	glPushMatrix();
+		//Esquerda
+	glTranslatef(-16.9, 1.75, -13.4);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, 2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, 2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, 2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, 2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, 2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, 2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, 2.7);
+	auxSolidCylinder(0.1, 1.5);
+
+		//Frente
+	glTranslatef(3.1, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(3.1, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(3.1, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(1.35, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(3.5, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(1.35, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(3.1, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(3.1, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(3.1, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+		//Direita
+	glTranslatef(0.0, 0.0, -2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, -2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, -2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, -2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, -2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, -2.85);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(0.0, 0.0, -2.7);
+	auxSolidCylinder(0.1, 1.5);
+
+		//Trás
+	glTranslatef(-3.52, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(-3.52, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(-3.52, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(-3.52, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(-3.52, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+	glTranslatef(-3.52, 0.0, 0.0);
+	auxSolidCylinder(0.1, 1.5);
+
+		//Primeiro Corrimão Esquerdo ...
+	glTranslatef(-3.69, 1.0, 18.9);
+	glRotatef(90.0, 1.0, 0.0, 0.0);
+	auxSolidCylinder(0.1, 20);
+
+		//Primeiro Corrimão Frontal ...
+	glTranslatef(1.0, 0.9, 0.0);//X   Z   Y   ?
+	glRotatef(90.0, 0.0, 0.0, 1.0);
+	auxSolidCylinder(0.1, 10.76);
+
+	glTranslatef(0.0, -14.08, 0.0);//X   Z   Y   ?
+	auxSolidCylinder(0.1, 10.82);
 
 
 
 
+	glPopMatrix();
+
+	//Casa
+	glColor3ub(247, 28, 6);
+	glPushMatrix();
+	glBegin(GL_QUADS);
+		//Casa -> Parede da frente
+	glColor3ub(169, 00, 91);
+	glVertex3f(-12.5f, 1.2f, 1.5f);//baixo da janela esquerda
+	glVertex3f(-6.5f, 1.2f, 1.5f);
+	glVertex3f(-6.5f, 2.7f, 1.5f);
+	glVertex3f(-12.5f, 2.7f, 1.5f);
+
+	glVertex3f(-12.5f, 2.7f, 1.5f);//esquerda da janela esquerda
+	glVertex3f(-10.5f, 2.7f, 1.5f);
+	glVertex3f(-10.5f, 7.2f, 1.5f);
+	glVertex3f(-12.5f, 7.2f, 1.5f);
+
+	glVertex3f(-10.5f, 6.3f, 1.5f);//cima da janela esquerda
+	glVertex3f(-6.5f, 6.3f, 1.5f);
+	glVertex3f(-6.5f, 7.2f, 1.5f);
+	glVertex3f(-10.5f, 7.2f, 1.5f);
+
+	glVertex3f(-8.0f, 2.7f, 1.5f);//direita da janela esquerda
+	glVertex3f(-6.5f, 2.7f, 1.5f);
+	glVertex3f(-6.5f, 6.3f, 1.5f);
+	glVertex3f(-8.0f, 6.3f, 1.5f);
+	// Medida da Janela 4,5 X 2,5
+
+	glVertex3f(-6.5f, 5.3f, 1.5f);//cima da porta
+	glVertex3f(-3.0f, 5.3f, 1.5f);
+	glVertex3f(-3.0f, 7.2f, 1.5f);
+	glVertex3f(-6.5f, 7.2f, 1.5f);
+
+	glVertex3f(-3.0f, 1.2f, 1.5f);//baixo da janela direita
+	glVertex3f(3.0f, 1.2f, 1.5f);
+	glVertex3f(3.0f, 2.7f, 1.5f);
+	glVertex3f(-3.0f, 2.7f, 1.5f);
+
+	glVertex3f(-3.0f, 2.7f, 1.5f);//esquerda da janela direita
+	glVertex3f(-1.5f, 2.7f, 1.5f);
+	glVertex3f(-1.5f, 7.2f, 1.5f);
+	glVertex3f(-3.0f, 7.2f, 1.5f);
+
+	glVertex3f(-1.5f, 6.3f, 1.5f);//cima da janela direita
+	glVertex3f(3.0f, 6.3f, 1.5f);
+	glVertex3f(3.0f, 7.2f, 1.5f);
+	glVertex3f(-1.5f, 7.2f, 1.5f);
+
+	glVertex3f(1.0f, 2.7f, 1.5f);//direita da janela direita
+	glVertex3f(3.0f, 2.7f, 1.5f);
+	glVertex3f(3.0f, 6.3f, 1.5f);
+	glVertex3f(1.0f, 6.3f, 1.5f);
+
+		//Casa -> Parede da direita
+	glColor3ub(247, 28, 6);
+	glVertex3f(3.0f, 1.2f, 1.5f);
+	glVertex3f(3.0f, 1.2f, -7.5f);
+	glVertex3f(3.0f, 7.2f, -7.5f);
+	glVertex3f(3.0f, 7.2f, 1.5f);
+
+		//Casa -> Parede da traseira
+	glVertex3f(3.0f, 1.2f, -7.5f);
+	glVertex3f(-12.5f, 1.2f, -7.5f);
+	glVertex3f(-12.5f, 7.2f, -7.5f);
+	glVertex3f(3.0f, 7.2f, -7.5f);
+
+		//Casa -> Parede da esquerda
+	glVertex3f(-12.5f, 1.2f, -7.5f);
+	glVertex3f(-12.5f, 1.2f, 1.5f);
+	glVertex3f(-12.5f, 7.2f, 1.5f);
+	glVertex3f(-12.5f, 7.2f, -7.5f);
+
+		//Casa -> Teto
+	glVertex3f(-12.5f, 7.2f, 1.5f);
+	glVertex3f(3.0f, 7.2f, 1.5f);
+	glVertex3f(3.0f, 7.2f, -7.5f);
+	glVertex3f(-12.5f, 7.2f, -7.5f);
+	glPopMatrix();
 
 
 
 
-
-
-
-
-
-	
-
+		//Casa -> Telhado
+	glColor3ub(12, 111, 2);
+	glPushMatrix();
+	glBegin(GL_TRIANGLES);
+	glVertex3f(-4.0f, 4.0f, -6.0f);
+	glVertex3f(4.0f, 4.0f, -6.0f);
+	glVertex3f(0.0f, 6.0f, -6.0f);
+	glPopMatrix();
 
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
