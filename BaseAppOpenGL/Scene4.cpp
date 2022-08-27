@@ -228,8 +228,38 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 	glTranslatef(0.0, -14.08, 0.0);//X   Z   Y   ?
 	auxSolidCylinder(0.1, 10.82);
 
+		//Primeiro Corrimão Direito ...
+	glTranslatef(-18.9, -9.74, 0.0);//Z   X    Y
+	glRotatef(90.0, 0.0, 0.0, 1.0);
+	auxSolidCylinder(0.1, 20.0);
 
+		//Primeiro Corrimão Traseiro ...
+	glTranslatef(0.9, 0.9, 0.0);//X   Z    Y
+	glRotatef(90.0, 0.0, 0.0, 1.0);
+	auxSolidCylinder(0.1, 25.0);
 
+		//Segundo Corrimão Esquerdo ...
+	glTranslatef(-18.8, -23.92, 0.8);//Z   X   Y
+	glRotatef(90.0, 0.0, 0.0, 1.0);
+	auxSolidCylinder(0.1, 20);
+
+		//Segundo Corrimão Frontal ...
+	glTranslatef(1.0, 0.9, 0.0);//X   Z   Y   ?
+	glRotatef(90.0, 0.0, 0.0, 1.0);
+	auxSolidCylinder(0.1, 10.76);
+
+	glTranslatef(0.0, -14.08, 0.0);//X   Z   Y   ?
+	auxSolidCylinder(0.1, 10.82);
+
+		//Segundo Corrimão Direito ...
+	glTranslatef(-18.9, -9.74, 0.0);//Z   X    Y
+	glRotatef(90.0, 0.0, 0.0, 1.0);
+	auxSolidCylinder(0.1, 20.0);
+
+		//Segundo Corrimão Traseiro ...
+	glTranslatef(0.9, 0.9, 0.0);//X   Z    Y
+	glRotatef(90.0, 0.0, 0.0, 1.0);
+	auxSolidCylinder(0.1, 25.0);
 
 	glPopMatrix();
 
@@ -309,19 +339,68 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 	glVertex3f(3.0f, 7.2f, 1.5f);
 	glVertex3f(3.0f, 7.2f, -7.5f);
 	glVertex3f(-12.5f, 7.2f, -7.5f);
+
+	glEnd();
 	glPopMatrix();
-
-
 
 
 		//Casa -> Telhado
+		//Principal
 	glColor3ub(12, 111, 2);
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
-	glVertex3f(-4.0f, 4.0f, -6.0f);
-	glVertex3f(4.0f, 4.0f, -6.0f);
-	glVertex3f(0.0f, 6.0f, -6.0f);
+	glVertex3f(3.0f, 7.2f, -11.5f);
+	glVertex3f(3.0f, 7.2f, 5.5f);
+	glVertex3f(3.0f, 12.7f, -3.0f);
+	glEnd();
 	glPopMatrix();
+
+	glPushMatrix();
+	glBegin(GL_TRIANGLES);
+	glVertex3f(-12.5f, 7.2f, -11.5f);
+	glVertex3f(-12.5f, 7.2f, 5.5f);
+	glVertex3f(-12.5f, 12.7f, -3.0f);
+	glEnd();
+	glPopMatrix();
+
+	glColor3ub(8, 107, 0);
+	glPushMatrix();
+	glBegin(GL_QUADS);
+	glVertex3f(-12.5f, 7.2f, -11.5f);
+	glVertex3f(3.0f, 7.2f, -11.5f);
+	glVertex3f(3.0f, 12.7f, -3.0f);
+	glVertex3f(-12.5f, 12.7f, -3.0f);
+	glEnd();
+	glPopMatrix();
+
+	glPushMatrix();
+	glBegin(GL_QUADS);
+	glVertex3f(-12.5f, 7.2f, 5.5f);
+	glVertex3f(3.0f, 7.2f, 5.5f);
+	glVertex3f(3.0f, 12.7f, -3.0f);
+	glVertex3f(-12.5f, 12.7f, -3.0f);
+	glEnd();
+	glPopMatrix();
+
+	glPushMatrix();
+	glBegin(GL_QUADS);
+	glVertex3f(-12.5f, 7.25f, 5.5f);
+	glVertex3f(3.0f, 7.25f, 5.5f);
+	glVertex3f(3.0f, 7.25f, -11.5f);
+	glVertex3f(-12.5f, 7.25f, -11.5f);
+	glEnd();
+	glPopMatrix();
+
+		//Puxado da esquerda ...
+	glColor3ub(12, 111, 2);
+	glBegin(GL_QUADS);
+	glVertex3f(-16.5f, 7.25f, 5.5f);
+	glVertex3f(-12.5f, 7.25f, 5.5f);
+	glVertex3f(-12.5f, 7.25f, -11.5f);
+	glVertex3f(-16.5f, 7.25f, -11.5f);
+	glEnd();
+	glPopMatrix();
+
 
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
