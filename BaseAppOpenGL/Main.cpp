@@ -323,13 +323,14 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
 {
 	MSG		msg;									// Windows Message Structure
 	BOOL	done = FALSE;								// Bool Variable To Exit Loop
-	BOOL	fullscreen = TRUE;
+	BOOL	fullscreen = FALSE;
 
 	int iAlturaJanela = HEIGHT;
 	int iLarguraJanela = WIDTH;
 
 	// Ask The User Which Screen Mode They Prefer
-	if (MessageBox(NULL,"Tela Cheia [Sim] - Janela [Não]?", 
+	/*
+	if (MessageBox(NULL, "Tela Cheia [Sim] - Janela [Não]?",
 		"Modo da Janela",MB_YESNO|MB_ICONQUESTION)==IDNO)
 	{
 		fullscreen=FALSE;							// Windowed Mode
@@ -340,7 +341,7 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
 		iAlturaJanela = GetSystemMetrics(SM_CYSCREEN);
 		fullscreen = TRUE;
 	}
-
+	*/
 
 	// Create Our OpenGL  Window
 	if (!CreateGLWindow("Aplicação Base OpenGL", iLarguraJanela, iAlturaJanela, BITS, fullscreen))

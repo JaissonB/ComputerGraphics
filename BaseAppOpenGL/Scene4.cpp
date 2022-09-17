@@ -348,6 +348,7 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 		//Principal
 	glColor3ub(12, 111, 2);
 	glPushMatrix();
+	//Triangulo direito
 	glBegin(GL_TRIANGLES);
 	glVertex3f(3.0f, 7.2f, -11.5f);
 	glVertex3f(3.0f, 7.2f, 5.5f);
@@ -356,6 +357,7 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 	glPopMatrix();
 
 	glPushMatrix();
+	//Triangulo esquerdo
 	glBegin(GL_TRIANGLES);
 	glVertex3f(-12.5f, 7.2f, -11.5f);
 	glVertex3f(-12.5f, 7.2f, 5.5f);
@@ -365,6 +367,7 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 
 	glColor3ub(8, 107, 0);
 	glPushMatrix();
+	//Aba da frente
 	glBegin(GL_QUADS);
 	glVertex3f(-12.5f, 7.2f, -11.5f);
 	glVertex3f(3.0f, 7.2f, -11.5f);
@@ -374,6 +377,7 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 	glPopMatrix();
 
 	glPushMatrix();
+	//Aba de trás
 	glBegin(GL_QUADS);
 	glVertex3f(-12.5f, 7.2f, 5.5f);
 	glVertex3f(3.0f, 7.2f, 5.5f);
@@ -383,6 +387,7 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 	glPopMatrix();
 
 	glPushMatrix();
+	//Aba de baixo
 	glBegin(GL_QUADS);
 	glVertex3f(-12.5f, 7.25f, 5.5f);
 	glVertex3f(3.0f, 7.25f, 5.5f);
@@ -401,7 +406,58 @@ int CScene4::DrawGLScene(void)	// Função que desenha a cena
 	glEnd();
 	glPopMatrix();
 
+	glBegin(GL_QUADS);
+	glVertex3f(-16.5f, 7.25f, -11.5f);
+	glVertex3f(-16.5f, 7.25f, 5.5f);
+	glVertex3f(-12.5f, 9.7f, 1.65f);
+	glVertex3f(-12.5f, 9.7f, -7.65f);
+	glEnd();
 
+	glBegin(GL_TRIANGLES);
+	glVertex3f(-16.5f, 7.25f, 5.5f);
+	glVertex3f(-12.5f, 7.25f, 5.5f);
+	glVertex3f(-12.5f, 9.7f, 1.65f);
+	glEnd();
+	glPopMatrix();
+
+	glBegin(GL_TRIANGLES);
+	glVertex3f(-16.5f, 7.25f, -11.5f);
+	glVertex3f(-12.5f, 9.7f, -7.65f);
+	glVertex3f(-12.5f, 7.25f, -11.5f);
+	glEnd();
+	glPopMatrix();
+
+	//Puxado da direita ...
+	glBegin(GL_QUADS);
+	glVertex3f(3.0f, 7.25f, 5.5f);
+	glVertex3f(3.0f, 7.25f, -11.5f);
+	glVertex3f(7.0f, 7.25f, -11.5f);
+	glVertex3f(7.0f, 7.25f, 5.5f);
+	glEnd();
+	glPopMatrix();
+	
+	glBegin(GL_QUADS);
+	glVertex3f(7.0f, 7.25f, -11.5f);
+	glVertex3f(7.0f, 7.25f, 5.5f);
+	glVertex3f(3.0f, 9.7f, 1.65f);
+	glVertex3f(3.0f, 9.7f, -7.65f);
+	glEnd();
+	
+	glBegin(GL_TRIANGLES);
+	glVertex3f(3.0f, 7.25f, 5.5f);
+	glVertex3f(7.0f, 7.25f, 5.5f);
+	glVertex3f(3.0f, 9.7f, 1.65f);
+	glEnd();
+	glPopMatrix();
+
+	glColor3ub(53, 111, 200);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(7.0f, 7.25f, -11.5f);
+	glVertex3f(3.0f, 9.7f, -7.65f);
+	glVertex3f(3.0f, 7.25f, -11.5f);
+	glEnd();
+	glPopMatrix();
+	
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//                               DESENHA OS OBJETOS DA CENA (FIM)
